@@ -1,11 +1,11 @@
-import { ResultSetHeader } from 'mysql2';
+import { ResultSetHeader, RowDataPacket } from 'mysql2';
 import mysql from './connection';
-import { Produto } from '../interfaces/produtos';
+import { Products, Produto, ProdutoReturn } from '../interfaces/produtos';
 
 export default class ProductModel {
-  private connection = mysql; // atributo
+  connection = mysql; // atributo
 
-  async create(obj: Produto): Promise<number> {
+  async create(obj: Produto): Promise<ProdutoReturn> {
     const { name, amount } = obj;
 
     const result = await this.connection.execute<ResultSetHeader>(
@@ -15,11 +15,11 @@ export default class ProductModel {
     const [dataInserted] = result;
     const { insertId } = dataInserted;
 
-    return insertId;
+    return { id: insertId, name, amount };
   }
 
-  async List():Promise<ResultSetHeader> {
-    const [result] = await this.connection.execute<ResultSetHeader>(
+  async List():Promise<Products[]> {
+    const [result] = await this.connection.execute<Products[] & RowDataPacket[]>(
       'SELECT * FROM Trybesmith.Products',
     );
 
