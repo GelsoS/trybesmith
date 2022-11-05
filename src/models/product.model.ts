@@ -3,7 +3,7 @@ import mysql from './connection';
 import { Products, Produto, ProdutoReturn } from '../interfaces/produtos';
 
 export default class ProductModel {
-  connection = mysql; // atributo
+  private connection = mysql; // atributo
 
   async create(obj: Produto): Promise<ProdutoReturn> {
     const { name, amount } = obj;
