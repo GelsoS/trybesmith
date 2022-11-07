@@ -7,7 +7,7 @@ export default function authMiddleware(req: Request, res:Response, next: NextFun
     const { authorization: token } = req.headers;
 
     if (!token) throw new HttpException(401, 'Token nao encontrado!');
-    const decoded = jwt.verify(token, process.env.JWT_SECRET as string);
+    const decoded = jwt.verify(token, 'segredo' as string);
     req.body.user = decoded;
     next();
   } catch (err) {

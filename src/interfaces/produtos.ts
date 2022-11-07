@@ -19,3 +19,13 @@ export interface People {
   level: number,
   password: string
 }
+
+export interface LoginUsr {
+  username: string,
+  password: string,
+}
+
+export interface Resposta {
+  status: number,
+  message: string,
+}
