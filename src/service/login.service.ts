@@ -1,7 +1,7 @@
 import { LoginUsr } from '../interfaces/produtos';
 import LoginModel from '../models/login.model';
 import createToken from '../utils/token';
-import VerificaLogin from '../utils/validateJoi';
+import { VerificaLogin } from '../utils/validateJoi';
 
 export default class LoginService {
   public loginModel = new LoginModel();
