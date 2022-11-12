@@ -41,5 +41,4 @@ export function user(body: People) {
   if (error) {
     return { status: type === 'any.required' ? 400 : 422, message: { message: error.message } };
   }
-  console.log(error);
 }
