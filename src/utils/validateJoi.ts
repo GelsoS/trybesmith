@@ -42,3 +42,13 @@ export function user(body: People) {
     return { status: type === 'any.required' ? 400 : 422, message: { message: error.message } };
   }
 }
+
+export function validaProductsIds(productsIds : number[]) {
+  if (!productsIds) return { status: 400, message: { message: '"productsIds" is required' } };
+  if (!Array.isArray(productsIds)) {
+    return { status: 422, message: { message: '"productsIds" must be an array' } };
+  }
+  if (productsIds.length === 0) {
+    return { status: 422, message: { message: '"productsIds" must include only numbers' } };
+  }
+}

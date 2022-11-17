@@ -1,6 +1,6 @@
 import { LoginUsr } from '../interfaces/produtos';
 import LoginModel from '../models/login.model';
-import createToken from '../utils/token';
+import { createToken } from '../utils/token';
 import { VerificaLogin } from '../utils/validateJoi';
 
 export default class LoginService {
@@ -14,7 +14,7 @@ export default class LoginService {
       
     if (!user) return { status: 401, message: { message: 'Username or password invalid' } };
     
-    const re = createToken(user.username);
+    const re = createToken(user.id);
 
     return { status: 200, message: { token: re } };
   }

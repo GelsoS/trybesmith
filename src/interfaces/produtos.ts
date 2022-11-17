@@ -29,3 +29,7 @@ export interface Resposta {
   status: number,
   message: string,
 }
+
+export interface Order{
+  productsIds: Array<number>
+}
