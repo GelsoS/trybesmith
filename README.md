@@ -1,16 +1,7 @@
-# 🚧 README em construção 🚧
+# 🚧 projeto Trybesmith 🚧
 
-<!-- Olá, Tryber!
+ Para este projeto, foi criado uma loja de itens medievais, no formato de uma API, utilizando Typescript.
 
-Esse é apenas um arquivo inicial para o README do seu projeto.
+Foi desenvolvido todas as camadas da aplicação (Models, Service e Controllers) no código e, por meio dessa aplicação, foi possível realizar as operações básicas que se pode fazer em um determinado banco de dados: Criação, Leitura, Atualização e Exclusão (ou CRUD, para as pessoas mais íntimas stuck_out_tongue_winking_eye - Create, Read, Update e Delete).
 
-É essencial que você preencha esse documento por conta própria, ok?
-
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-
-⚠️ IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
-
--->
+Foi criado alguns endpoints que serviram para ler e escrever em um banco de dados, utilizando o MySQL.
